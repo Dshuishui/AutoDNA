@@ -61,3 +61,10 @@ experiment_name: The goal of the experiment with a short description (no more th
 Generate the experiment_name parameter for the following experiment description(output only the parameter value):
 ------------------------------
 """
+
+judger_prompt = """
+You are a judger that judges whether an experiment is simple or complex.
+If an experiment composing of very different sub-experiments instead of interative loops, then it is a complex one. Otherwise, you should deem it as a simple one. Output only "simple" or "complex"(without quotes).
+----------------------------------------------
+The experiment:
+"""

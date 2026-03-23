@@ -206,6 +206,7 @@ def summarize_task(initial_prompt: str) -> str:
     output_cache_file = os.path.join(stage0_cache_dir, "summarize_task_output.txt")
 
     # Check if the summary is already cached
+    # If the user prompt chanegs, the cache will be invalid ❕❕❕❕❕❕
     if os.path.exists(output_cache_file):
         with open(output_cache_file, 'r', encoding='utf-8') as f:
             summary = f.read().strip()
@@ -399,12 +400,6 @@ def judge_task_complexity(experiment_name: str) -> str:
             complexity = f.read().strip()
         logger.success(f"Loaded cached complexity judgement: '{complexity}'")
         return complexity
-
-    judger_prompt = """You are a judger that judges whether an experiment is simple or complex.
-If an experiment composing of very different sub-experiments instead of interative loops, then it is a complex one. Otherwise, you should deem it as a simple one. Output only "simple" or "complex"(without quotes).
-----------------------------------------------
-The experiment:
-"""
     
     full_prompt = judger_prompt + experiment_name
     
