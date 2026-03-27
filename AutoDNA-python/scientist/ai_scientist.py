@@ -560,6 +560,7 @@ def planner(user_prompt: str, system_prompt: str, toolset, current_stage: int):
     max_retries = 1
     
     for attempt in range(max_retries):
+        # if this is a retry, clear the output folder
         if attempt > 0:
             logger.info(f"🔄 Retry attempt {attempt + 1}/{max_retries} for Stage {current_stage}...")
             # clear the output folder 

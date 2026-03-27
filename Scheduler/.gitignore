@@ -94,3 +94,6 @@ CMakeLists.txt.user
 build/
 local_build/
 cross_build/
+
+# other
+outputAll.xml
