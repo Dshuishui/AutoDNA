@@ -98,7 +98,7 @@ def configure_cli_logging(verbosity: int | Settings = 0) -> None:
         ParsingSettings.model_fields["configure_pdf_parser"].default()
     configure_log_verbosity(verbosity)
     if verbosity > 0:
-        print(f"PaperQA version: {"__version__"}")
+        print(f"PaperQA version: {__version__}")
 
 
 def ask(

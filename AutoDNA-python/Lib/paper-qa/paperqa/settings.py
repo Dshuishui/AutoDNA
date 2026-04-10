@@ -250,7 +250,7 @@ class ParsingSettings(BaseModel):
 
     @property
     def parser_version_string(self) -> str:
-        return f"paperqa-{"123"}"
+        return "paperqa-123"
 
     def is_chunking_valid_for_parsing(self, parsing: str):
         # must map the parsings because they won't include versions by default
